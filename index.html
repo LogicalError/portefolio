@@ -1,0 +1,179 @@
+<html>
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+        <style >
+            body
+            {
+                background-color:lightblue;
+                font-family: "Open Sans", sans-serif;
+                font-optical-sizing: auto;
+                font-style: normal;
+                font-variation-settings: "wdth" 100;
+                font-size: 13px;
+                color:dimgray
+            }
+            #background
+            {
+                margin: 20px auto  20px  auto;
+                border-radius: 20px;
+                background-color: white;
+                width: 1000px;
+            }
+            #header
+            {
+                height: 300px;
+            }
+            #header-text
+            {
+                float:left;
+                height: 240px;
+                max-width: 500px;
+                padding: 60px;
+                padding-right: 10px;
+                padding-top: 120px;
+                font-size: 24px;
+            }
+            #header-icon
+            {
+                float:right;
+                width: 240px;
+                height: 240px;
+                padding: 60px;
+                padding-left: 10px;
+            }
+            #text-table
+            {
+                border: 0px;
+                width: 100%;
+                padding-bottom: 60px;
+            }
+            #text-table tr td
+            {
+                padding-top: 20px;
+                text-align: left;
+                vertical-align: top;
+            }
+            #text-table .title td
+            {
+                padding-top: 50px;
+            }
+            #text-table tr td img
+            {
+                padding-right: 10px;
+            }
+            #text-table tr td:first-child
+            {
+                width: 160px;
+                text-align: right;
+                font-weight:bold;
+                color:darkred;
+                padding-right: 40px;
+                font-size: 13px;
+                vertical-align: top;
+            }
+            #text-table tr td:last-child
+            {
+                padding-right: 60px;
+            }
+            a
+            {
+                text-decoration: none;
+                font-weight: bold;
+                color:darkred;
+            }
+            a:hover
+            {
+                text-decoration: underline;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="background">
+            <div id="header">
+                <div id="header-text">
+                Hi!<br/>
+                I'm <b>Sander van Rossen</b>, I love optimizing code, make tools easier to use, improving workflows and polishing games. 
+                </div>
+                <img id="header-icon" src="mugshot.png"/>
+            </div>
+            <diV>
+                <table id="text-table">
+                    <tr class="title">
+                        <td>BACKGROUND</td>
+                        <td colspan="2">
+                            <p>I've been programming since before I was a teenager. I have decades of experience in researching, designing and implementing algorithms. I love games, how they are made, and all the technology, disciplines and tools that have to do with it.</p>
+                        </td>
+                    </tr>
+
+
+                    <tr class="title">
+                        <td>EXPERIENCE</td>
+                        <td><a href="https://store.steampowered.com/app/1588530/Dungeon_Alchemist/"><img src="dungeon_alchemist.png" width="350" style="float:left"/></a></td>
+                        <td>At Briganti I optimized several subsystems such as terrain editing and implemented new features for <a href="https://store.steampowered.com/app/1588530/Dungeon_Alchemist/">Dungeon Alchemist</a> such as a decal rendering and placement.</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><a href="https://www.roblox.com/"><img src="roblox.png" width="350" style="float:left"/></a></td>
+                        <td>At <a href="https://www.roblox.com/">Roblox</a>, I helped optimize code, and implemented runtime mesh editing functionality for people making games on the roblox platform. Additionally I held internal presentations on <b>data orientated design principles</b>.</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><a href="https://unity.com/"><img src="unity.png" width="350" style="float:left"/></a></td>
+                        <td>At <a href="https://unity.com/">Unity</a> I worked in several teams over the years, such as the <b>animation team</b>, the <b>asset pipeline team</b>, the <b>scene management team</b> and the <b>core foundation team</b>.</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><a href="https://gunshipx.com/"><img src="gunshipx.png" width="350" style="float:left"/></a></td>
+                        <td>As an indie game developer I helped create the iOS game "<a href="https://gunshipx.com/">Gunship X</a>", which was written using Unity.</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><a href="https://apps.apple.com/us/app/zombie-gunship-gun-down-zombies/id435797419"><img src="zombie_gunship.png" width="350" style="float:left"/></a></td>
+                        <td><p>As an indie game developer I worked on the hit iOS game "<a href="https://apps.apple.com/us/app/zombie-gunship-gun-down-zombies/id435797419">Zombie Gunship</a>" using a custom engine we wrote. As far as we know this was the <i>first</i> IOS game with post processing.</br>The <b>IPhone 3</b> was considered a high end target platform at the time.</td>
+                    </tr>
+
+
+                    <tr class="title">
+                        <td>SIDE PROJECTS</td>
+                        <td><a href="https://www.youtube.com/watch?v=znr-SlAXFeE"><img src="ui_framework.png" width="350" style="float:left"/></a></td>
+                        <td>In my spare time I've been working on a <a href="https://www.youtube.com/watch?v=znr-SlAXFeE">UI framework</a> designed to quickly make editors and tools.</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><a href="https://logicalerror.github.io/realtime-csg/"><img src="realtimecsg.png" width="350" style="float:left"/></a></td>
+                        <td>I independently created <a href="https://logicalerror.github.io/realtime-csg/">realtime-CSG</a>.<br/>A <b>level editor</b> plugin for use within Unity. The editing of the level uses Constructive Solid Geometry (CSG) for which I developed an iterative, realtime algorithm for. </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><a href="https://www.youtube.com/watch?v=s64sJldDQ00"><img src="minecraft_clone.png" width="350" style="float:left"/></a></td>
+                        <td>In 2003 I wrote a <a href="https://www.youtube.com/watch?v=s64sJldDQ00">minecraft clone</a> in C++, that rendered the world in only 2 drawcalls, using 1gb of memory, with streaming / far views and sorted transparency, which at the time ran at less than 1ms per frame.</td>
+                    </tr>
+
+                    
+                    <tr class="title">
+                        <td>PRESENTATIONS</td>
+                        <td><a href="https://www.gdcvault.com/play/1026755/Tools-Summit-Geometry-in-Milliseconds"><img src="gdc.png" width="350" style="float:left"/></a></td>
+                        <td><a href="https://www.gdcvault.com/play/1026755/Tools-Summit-Geometry-in-Milliseconds">A GDC talk I gave</a> on a novel <b>Realtime Constructive Solid Geometry</b> algorithm I developed.</td>
+                    </tr>
+
+                    
+                    <tr class="title">
+                        <td>ARTICLES</td>
+                        <td><a href="https://sandervanrossen.blogspot.com/2022/11/implicit-half-edges.html"><img src="implicit_halfedges.png".png" width="350" style="float:left"/></a></td>
+                        <td>Here I wrote about a highly optimized, hard to break, <a href="https://sandervanrossen.blogspot.com/2022/11/implicit-half-edges.html">data structure</a> for storing <b>topology</b> with meshes.</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><a href="https://www.taylorfrancis.com/books/edit/10.1201/b10946/game-development-tools-marwan-ansari"><img src="gdt.png" width="350" style="float:left"/></a></td>
+                        <td>In the book "<a href="https://www.taylorfrancis.com/books/edit/10.1201/b10946/game-development-tools-marwan-ansari">Game Development Tools</a>" I wrote an article about "<b>Realtime Constructive Solid Geometry</b>"</td>
+                    </tr>
+                </table>
+            </diV>
+            <br/>
+            <br/>
+            <br/>
+        </div>
+    </body>
+</html>
