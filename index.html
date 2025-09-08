@@ -23,16 +23,23 @@
             }
             #header
             {
-                height: 300px;
+                box-sizing: border-box;
+                display:inline-block;
+                width: 100%;
+            }
+            #header:after
+            {
+                clear: both;
             }
             #header-text
             {
                 float:left;
                 height: 240px;
                 max-width: 500px;
-                padding: 60px;
+                padding-left: 60px;
+                padding-right: 60px;
                 padding-right: 10px;
-                padding-top: 120px;
+                padding-top: 90px;
                 font-size: 24px;
             }
             #header-icon
@@ -40,42 +47,44 @@
                 float:right;
                 width: 240px;
                 height: 240px;
-                padding: 60px;
+                padding-top: 40px;
+                padding-right: 60px;
                 padding-left: 10px;
             }
-            #text-table
+
+            .line
             {
-                border: 0px;
+                box-sizing: border-box;
                 width: 100%;
-                padding-bottom: 60px;
-            }
-            #text-table tr td
-            {
-                padding-top: 20px;
-                text-align: left;
+                padding: 0px;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                padding-right: 50px;
+                display:grid;
+                grid-template-columns: 175px auto auto;
+                column-gap: 20px;
+                font-size: 15px;
                 vertical-align: top;
             }
-            #text-table .title td
+            .line *
             {
-                padding-top: 50px;
+                margin: 0px;
+                padding: 0px;
             }
-            #text-table tr td img
+            .line-header
             {
-                padding-right: 10px;
-            }
-            #text-table tr td:first-child
-            {
-                width: 160px;
-                text-align: right;
-                font-weight:bold;
-                color:darkred;
-                padding-right: 40px;
+                font-weight: bold;
                 font-size: 13px;
+                
                 vertical-align: top;
+                text-align: right;
+
+                color:darkred;
             }
-            #text-table tr td:last-child
+            .line-text-only
             {
-                padding-right: 60px;
+                grid-column-start: 2;
+                grid-column-end: 3;
             }
             a
             {
@@ -96,81 +105,113 @@
                 Hi!<br/>
                 I'm <b>Sander van Rossen</b>, I love optimizing code, make tools easier to use, improving workflows and polishing games. 
                 </div>
-                <img id="header-icon" src="mugshot.png"/>
+                <img id="header-icon" src="mugshot2.png"/>
             </div>
-            <diV>
-                <table id="text-table">
-                    <tr class="title">
-                        <td>BACKGROUND</td>
-                        <td colspan="2">
-                            <p>I've been programming since before I was a teenager. I have decades of experience in researching, designing and implementing algorithms. I'm passionate about computer games, how they are made, and all the technology, disciplines and tools around it.</p>
-                        </td>
-                    </tr>
+            
+            <div class="line">
+                <p class="line-header">BACKGROUND</p>
+                <p>I've been programming since before I was a teenager. I have decades of experience in researching, designing and implementing algorithms. I'm passionate about computer games, how they are made, and all the technology, disciplines and tools around it.</p>
+            </div>
+
+            <div class="line">
+                <p class="line-header">EXPERIENCE</p>
+                <p><a href="https://store.steampowered.com/app/1588530/Dungeon_Alchemist/"><img src="dungeon_alchemist.png" width="350"/></a></p>
+                <p>At Briganti I optimized several subsystems such as terrain editing and implemented new features for <a href="https://store.steampowered.com/app/1588530/Dungeon_Alchemist/">Dungeon Alchemist</a> such as a decal rendering and placement.</p>
+            </div>
+
+            <div class="line">
+                <p class="line-header">&nbsp;</p>
+                <p><a href="https://www.roblox.com/"><img src="roblox.png" width="350" style="float:left"/></a></p>
+                <p>At <a href="https://www.roblox.com/">Roblox</a>, I helped optimize code, and implemented runtime mesh editing functionality for people making games on the roblox platform. Additionally I held internal presentations on <b>data orientated design principles</b>.</p>
+            </div>
+            
+            <div class="line">
+                <p class="line-header">&nbsp;</p>
+                <p><a href="https://unity.com/"><img src="unity.png" width="350" style="float:left"/></a></p>
+                <p>At <a href="https://unity.com/">Unity</a> I worked in several teams over the years, such as the <b>animation team</b>, the <b>asset pipeline team</b>, the <b>scene management team</b> and the <b>core foundation team</b>.</p>
+            </div>
+            
+            <div class="line">
+                <p class="line-header">&nbsp;</p>
+                <p><a href="https://gunshipx.com/"><img src="gunshipx.png" width="350" style="float:left"/></a></p>
+                <p>As an indie game developer I helped create the iOS game "<a href="https://gunshipx.com/">Gunship X</a>", which was written using Unity.</p>
+            </div>
+            
+            <div class="line">
+                <p class="line-header">&nbsp;</p>
+                <p><a href="https://apps.apple.com/us/app/zombie-gunship-gun-down-zombies/id435797419"><img src="zombie_gunship.png" width="350" style="float:left"  /></a></p>
+                <p>As an indie game developer I worked on the hit iOS game "<a href="https://apps.apple.com/us/app/zombie-gunship-gun-down-zombies/id435797419">Zombie Gunship</a>" using a custom engine we wrote. As far as we know this was the <i>first</i> IOS game with post processing.</br>The <b>IPhone 3</b> was considered a high end target platform at the time.</p>
+            </div>
+
+            <div class="line">
+                <p class="line-header">SIDE PROJECTS</p>
+                <p>
+                    <span style="width:100%; display:inline-block; padding-bottom: 4px;">
+                    <b>UI Framework (WIP)</b>
+                    </span>
+                    <span style="width:100%; display:inline-block; padding-bottom: 8px;">
+                    In my spare time I've been working on a <b>UI framework</b> designed to quickly make editors and tools. All the UI is defined in an immediate mode style and is rendered using a graphics API such as Vulkan or OpenGL. 
+                    </span>                    
+                    <span style="width:100%; display:inline-block; padding-bottom: 8px;">
+                    <video width="700" height="325" controls autoplay muted><source src="gui.mp4" type="video/mp4">Your browser does not support the video tag.</video>
+                    </span>
+                </p>
+            </div>
+            
+            <div class="line">
+                <p class="line-header">&nbsp;</p>
+                <p>
+                    <span style="width:100%; display:inline-block; padding-bottom: 4px;">
+                    <b>Realtime CSG</b>
+                    </span>                    
+                    <span style="width:100%; display:inline-block; padding-bottom: 8px;">
+                    <a href="https://logicalerror.github.io/realtime-csg/"><img src="freedraw2.gif" width="364" style="float:left"/></a>
+                    <a href="https://logicalerror.github.io/realtime-csg/"><img src="curves.gif" width="364" style="float:right"/></a>
+                    </span>
+                    <span style="width:100%; display:inline-block; padding-bottom: 8px;">
+                    <a href="https://logicalerror.github.io/realtime-csg/"><img src="realtimecsg.png" width="364" style="float:right; padding-left: 10px;"/></a>
+                    <span>
+                        <br/>
+                        <br/>
+                        <br/><br/><br/>
+                    I created <a href="https://logicalerror.github.io/realtime-csg/">realtime-CSG</a>, a <b>level editor</b> plugin for use within Unity. The editing of the level uses a iterative and real-time, Constructive Solid Geometry (CSG), algorithm which I developed independently. This has been used in <a href="https://store.steampowered.com/app/1150760/Gloomwood/">Gloomwood</a>, and <a href="https://store.steampowered.com/app/687440/In_The_Valley_of_Gods/">in the valley of the gods</a>.
+                    </span>
+                    </span>
+                    <span style="width:100%; display:inline-block; padding-bottom: 8px;">
+                    <a href="https://logicalerror.github.io/realtime-csg/"><img src="prefabdragging.gif" width="364" style="float:left"/></a>
+                    <a href="https://logicalerror.github.io/realtime-csg/"><img src="dragtexgencopy.gif" width="364" style="float:right"/></a>
+                    </span>
+                </p>
+            </div>
+            
+            <div class="line">
+                <p class="line-header">&nbsp;</p>
+                <p><iframe width="350" src="https://www.youtube.com/embed/h5v7FNbBN24?si=A0ffSm_bG3cxUdeE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="float:left"></iframe></p>
+                <p>In 2003 I wrote a <a href="https://www.youtube.com/watch?v=s64sJldDQ00">minecraft clone</a> in C++, that rendered the world in only 2 drawcalls, using 1gb of memory, with streaming / far views and sorted transparency, which at the time ran at less than 1ms per frame.</p>
+            </div>
+
+            
+            <div class="line">
+                <p class="line-header">PRESENTATIONS</p>
+                <p><a href="https://www.gdcvault.com/play/1026755/Tools-Summit-Geometry-in-Milliseconds"><img src="gdc.png" width="350" style="float:left"/></a></p>
+                <p><a href="https://www.gdcvault.com/play/1026755/Tools-Summit-Geometry-in-Milliseconds">A GDC talk I gave</a> on a novel <b>Realtime Constructive Solid Geometry</b> algorithm I developed.</p>
+            </div>
+
+            
+            <div class="line">
+                <p class="line-header">ARTICLES</p>
+                <p><a href="https://sandervanrossen.blogspot.com/2022/11/implicit-half-edges.html"><img src="implicit_halfedges.png".png" width="350" style="float:left"/></a></p>
+                <p>Here I wrote about a highly optimized, hard to break, <a href="https://sandervanrossen.blogspot.com/2022/11/implicit-half-edges.html">data structure</a> for storing <b>topology</b> with meshes.</p>
+            </div>
+            
+            <div class="line">
+                <p class="line-header">&nbsp;</p>
+                <p><a href="https://www.taylorfrancis.com/books/edit/10.1201/b10946/game-development-tools-marwan-ansari"><img src="gdt.png" width="350" style="float:left"/></a></p>
+                <p>In the book "<a href="https://www.taylorfrancis.com/books/edit/10.1201/b10946/game-development-tools-marwan-ansari">Game Development Tools</a>" I wrote an article about "<b>Realtime Constructive Solid Geometry</b>"</p>
+            </div>
 
 
-                    <tr class="title">
-                        <td>EXPERIENCE</td>
-                        <td><a href="https://store.steampowered.com/app/1588530/Dungeon_Alchemist/"><img src="dungeon_alchemist.png" width="350" style="float:left"/></a></td>
-                        <td>At Briganti I optimized several subsystems such as terrain editing and implemented new features for <a href="https://store.steampowered.com/app/1588530/Dungeon_Alchemist/">Dungeon Alchemist</a> such as a decal rendering and placement.</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td><a href="https://www.roblox.com/"><img src="roblox.png" width="350" style="float:left"/></a></td>
-                        <td>At <a href="https://www.roblox.com/">Roblox</a>, I helped optimize code, and implemented runtime mesh editing functionality for people making games on the roblox platform. Additionally I held internal presentations on <b>data orientated design principles</b>.</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td><a href="https://unity.com/"><img src="unity.png" width="350" style="float:left"/></a></td>
-                        <td>At <a href="https://unity.com/">Unity</a> I worked in several teams over the years, such as the <b>animation team</b>, the <b>asset pipeline team</b>, the <b>scene management team</b> and the <b>core foundation team</b>.</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td><a href="https://gunshipx.com/"><img src="gunshipx.png" width="350" style="float:left"/></a></td>
-                        <td>As an indie game developer I helped create the iOS game "<a href="https://gunshipx.com/">Gunship X</a>", which was written using Unity.</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td><a href="https://apps.apple.com/us/app/zombie-gunship-gun-down-zombies/id435797419"><img src="zombie_gunship.png" width="350" style="float:left"/></a></td>
-                        <td><p>As an indie game developer I worked on the hit iOS game "<a href="https://apps.apple.com/us/app/zombie-gunship-gun-down-zombies/id435797419">Zombie Gunship</a>" using a custom engine we wrote. As far as we know this was the <i>first</i> IOS game with post processing.</br>The <b>IPhone 3</b> was considered a high end target platform at the time.</td>
-                    </tr>
 
-
-                    <tr class="title">
-                        <td>SIDE PROJECTS</td>
-                        <td><a href="https://www.youtube.com/watch?v=znr-SlAXFeE"><img src="ui_framework.png" width="350" style="float:left"/></a></td>
-                        <td>In my spare time I've been working on a <a href="https://www.youtube.com/watch?v=znr-SlAXFeE">UI framework</a> designed to quickly make editors and tools.</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td><a href="https://logicalerror.github.io/realtime-csg/"><img src="realtimecsg.png" width="350" style="float:left"/></a></td>
-                        <td>I independently created <a href="https://logicalerror.github.io/realtime-csg/">realtime-CSG</a>.<br/>A <b>level editor</b> plugin for use within Unity. The editing of the level uses Constructive Solid Geometry (CSG) for which I developed an iterative, realtime algorithm for. </td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td><a href="https://www.youtube.com/watch?v=s64sJldDQ00"><img src="minecraft_clone.png" width="350" style="float:left"/></a></td>
-                        <td>In 2003 I wrote a <a href="https://www.youtube.com/watch?v=s64sJldDQ00">minecraft clone</a> in C++, that rendered the world in only 2 drawcalls, using 1gb of memory, with streaming / far views and sorted transparency, which at the time ran at less than 1ms per frame.</td>
-                    </tr>
-
-                    
-                    <tr class="title">
-                        <td>PRESENTATIONS</td>
-                        <td><a href="https://www.gdcvault.com/play/1026755/Tools-Summit-Geometry-in-Milliseconds"><img src="gdc.png" width="350" style="float:left"/></a></td>
-                        <td><a href="https://www.gdcvault.com/play/1026755/Tools-Summit-Geometry-in-Milliseconds">A GDC talk I gave</a> on a novel <b>Realtime Constructive Solid Geometry</b> algorithm I developed.</td>
-                    </tr>
-
-                    
-                    <tr class="title">
-                        <td>ARTICLES</td>
-                        <td><a href="https://sandervanrossen.blogspot.com/2022/11/implicit-half-edges.html"><img src="implicit_halfedges.png".png" width="350" style="float:left"/></a></td>
-                        <td>Here I wrote about a highly optimized, hard to break, <a href="https://sandervanrossen.blogspot.com/2022/11/implicit-half-edges.html">data structure</a> for storing <b>topology</b> with meshes.</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td><a href="https://www.taylorfrancis.com/books/edit/10.1201/b10946/game-development-tools-marwan-ansari"><img src="gdt.png" width="350" style="float:left"/></a></td>
-                        <td>In the book "<a href="https://www.taylorfrancis.com/books/edit/10.1201/b10946/game-development-tools-marwan-ansari">Game Development Tools</a>" I wrote an article about "<b>Realtime Constructive Solid Geometry</b>"</td>
-                    </tr>
-                </table>
-            </diV>
             <br/>
             <br/>
             <br/>
