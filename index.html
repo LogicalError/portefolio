@@ -21,7 +21,7 @@
                 font-optical-sizing: auto;
                 font-style: normal;
                 font-variation-settings: "wdth" 100;
-                font-size: 13px;
+                font-size: 0.9em;
                 color:dimgray
             }
             #background
@@ -36,6 +36,7 @@
                 box-sizing: border-box;
                 display:inline-block;
                 width: 100%;
+                padding-bottom: 20px;
             }
             #header:after
             {
@@ -44,19 +45,17 @@
             #header-text
             {
                 float:left;
-                height: 240px;
                 max-width: 500px;
                 padding-left: 60px;
                 padding-right: 60px;
                 padding-right: 10px;
                 padding-top: 90px;
-                font-size: 24px;
+                font-size: 1.6em;
             }
             #header-icon
             {
                 float:right;
                 width: 240px;
-                height: 240px;
                 padding-top: 40px;
                 padding-right: 60px;
                 padding-left: 10px;
@@ -65,7 +64,6 @@
             .line
             {
                 box-sizing: border-box;
-                width: 100%;
                 padding: 0px;
                 padding-top: 10px;
                 padding-bottom: 10px;
@@ -73,7 +71,6 @@
                 display:grid;
                 grid-template-columns: 175px auto auto;
                 column-gap: 20px;
-                font-size: 15px;
                 vertical-align: top;
             }
             .line *
@@ -81,10 +78,14 @@
                 margin: 0px;
                 padding: 0px;
             }
+            .line-contents
+            {
+                width: 100%;
+            }
             .line-header
             {
                 font-weight: bold;
-                font-size: 13px;
+                font-size: larger;
                 
                 vertical-align: top;
                 text-align: right;
@@ -108,10 +109,33 @@
             }
             .subtitle
             {
-                width:100%; 
+                width: 100%; 
                 display:inline-block; 
                 padding-bottom: 4px;
                 font-weight: bold;
+                font-size: larger;
+            }
+            .flex_column
+            {
+                display: flex; 
+                flex-direction: column;
+                flex-wrap: nowrap;
+                justify-content: flex-start;
+                align-items: flex-start;
+                align-content: center;
+                column-gap: 10px;
+                row-gap: 10px;
+            }
+            .flex_rows
+            {
+                display: flex; 
+                flex-direction: row;
+                flex-wrap: nowrap;
+                justify-content: flex-start;
+                align-items: center;
+                align-content: flex-start;
+                row-gap: 10px;
+                column-gap: 10px;
             }
         </style>
     </head> 
@@ -127,41 +151,50 @@
             
             <div class="line">
                 <p class="line-header">EXPERIENCE</p>
-                <p>
+                <p class="line-contents">
                     <span class="subtitle">Briganti (Dungeon Alchemist)</span>
-                    <span style="width:100%; display:inline-block; padding-bottom: 34px;">
-                    <a href="https://store.steampowered.com/app/1588530/Dungeon_Alchemist/"><img src="dungeon_alchemist.png" width="350" style="float:left; padding-right: 20px;"/></a>
-                    At Briganti I <b>optimized several subsystems</b> such as terrain editing (easily made this 100x faster) and implemented new features for <a href="https://store.steampowered.com/app/1588530/Dungeon_Alchemist/">Dungeon Alchemist</a> such as a <b>decal rendering and placement</b>, 
-                    this was complicated by the fact that DA doesn't have collider meshes / LODS and supports user provided meshes. So there was no smooth surface to ray-cast against. 
-                    </span>
-                    <span style="width:100%; display:inline-block; padding-bottom: 8px;">
-                        <span style="float:left;"><img src="decals.gif" width="350"/></span>
-                        <span style="float:right;"><video width="350" controls autoplay playsinline loop muted><source src="terrain.mp4" type="video/mp4">Your browser does not support the video tag.</video></span>
+                    <span class="flex_column">
+                        <span class="flex_rows">
+                            <span><a href="https://store.steampowered.com/app/1588530/Dungeon_Alchemist/"><img src="dungeon_alchemist.png" width="360"/></a></span>
+                            <span>
+                                At Briganti I <b>optimized several subsystems</b> such as terrain editing (easily made this 100x faster) and implemented new features for <a href="https://store.steampowered.com/app/1588530/Dungeon_Alchemist/">Dungeon Alchemist</a> such as a <b>decal rendering and placement</b>, 
+                                this was complicated by the fact that DA doesn't have collider meshes / LODS and supports user provided meshes. So there was no smooth surface to ray-cast against. 
+                            </span>
+                        </span>
+                        <span class="flex_rows">
+                            <span><img src="decals.gif" width="360"/></span>
+                            <span><video width="360" controls autoplay playsinline loop muted><source src="terrain.mp4" type="video/mp4">Your browser does not support the video tag.</video></span>
+                        </span>
                     </span>
                 </p>
             </div>
 
             <div class="line">
                 <p class="line-header">&nbsp;</p>
-                <p>
+                <p class="line-contents">
                     <span class="subtitle">Roblox</span>
-                    <span style="width:100%; display:inline-block; padding-bottom: 8px;">
-                    <a href="https://www.roblox.com/"><img src="roblox.png" width="350" style="float:left; padding-right: 20px;"/></a>
-                    At <a href="https://www.roblox.com/">Roblox</a>, I helped optimize code, and <b>implemented runtime mesh editing functionality</b> for people making games and assets within experiences on the roblox platform. <br/><br/>Additionally I held internal presentations on <b>data orientated design principles</b>.
+                    <span class="flex_column">
+                        <span class="flex_rows">
+                            <span><a href="https://www.roblox.com/"><img src="roblox.png" width="360"/></a></span>
+                            <span>
+                                At <a href="https://www.roblox.com/">Roblox</a>, I helped optimize code, and <b>implemented runtime mesh editing functionality</b> for people making games and assets within experiences on the roblox platform. <br/><br/>Additionally I held internal presentations on <b>data orientated design principles</b>.
+                            </span>
+                        </span>
                     </span>
                 </p>
             </div>
             
             <div class="line">
                 <p class="line-header">&nbsp;</p>
-                <p>
+                <p class="line-contents">
                     <span class="subtitle">Unity Technologies</span>
-                    <span style="width:100%; display:inline-block; padding-bottom: 8px;">
-                    <a href="https://unity.com/"><img src="unity.png" width="350" style="float:left; padding-right: 20px;"/></a>
-                    <br/>
-                    <br/>
-                    <br/>
-                    At <a href="https://unity.com/">Unity</a> I worked in several teams over the years, such as the <b>animation team</b>, the <b>asset pipeline team</b>, the <b>scene management team</b> and the <b>core foundation team</b>.
+                    <span class="flex_column">
+                        <span class="flex_rows">
+                            <span><a href="https://unity.com/"><img src="unity.png" width="360"/></a></span>
+                            <span>
+                                At <a href="https://unity.com/">Unity</a> I worked in several teams over the years, such as the <b>animation team</b>, the <b>asset pipeline team</b>, the <b>scene management team</b> and the <b>core foundation team</b>.
+                            </span>
+                        </span>
                     </span>
                 </p>
             </div>
@@ -169,77 +202,86 @@
             
             <div class="line">
                 <p class="line-header">&nbsp;</p>
-                <p>
+                <p class="line-contents">
                     <span class="subtitle">Gunship X</span>
-                    <span style="width:100%; display:inline-block; padding-bottom: 8px;">
-                    <iframe width="730" height="410" title="YouTube video player" frameborder="0" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="1" style="float:left;" allow="accelerometer; autoplay; mute; playsinline; loop; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" src="https://www.youtube.com/embed/qIC-Yxv9c6E?loop=1&autoplay=1&mute=1&playlist=qIC-Yxv9c6E"></iframe>
-                    </span>
-                    <span style="width:100%; display:inline-block; padding-bottom: 8px;">
-                    As an indie game developer I was <b>one of the co-creators</b> of the iOS game "<a href="https://gunshipx.com/">Gunship X</a>", using Unity. <br/>I wrote the path-finding and AI, the shaders, audio scheduling, all the controls and the in-game UI.
+                    <span class="flex_column">
+                        <span style="display: inline-block">
+                            <iframe width="730" height="410" title="YouTube video player" frameborder="0" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="1" allow="accelerometer; autoplay; mute; playsinline; loop; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" src="https://www.youtube.com/embed/qIC-Yxv9c6E?loop=1&autoplay=1&mute=1&playlist=qIC-Yxv9c6E"></iframe>
+                        </span>     
+                        <span style="display: inline-block">
+                            As an indie game developer I was <b>one of the co-creators</b> of the iOS game "<a href="https://gunshipx.com/">Gunship X</a>", using Unity. I wrote the path-finding and AI, the shaders, audio scheduling, all the controls and the in-game UI.
+                        </span>
                     </span>
                 </p>
             </div>
             
             <div class="line">
                 <p class="line-header">&nbsp;</p>
-                <p>
+                <p class="line-contents">
                     <span class="subtitle">Zombie Gunship</span>
-                    <span style="width:100%; display:inline-block; padding-bottom: 8px;">
-                    <iframe width="730" height="410" title="YouTube video player" frameborder="0" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="1" style="float:left;" allow="accelerometer; autoplay; mute; playsinline; loop; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" src="https://www.youtube.com/embed/NOJHHDNAZ34?loop=1&autoplay=1&mute=1&playlist=NOJHHDNAZ34"></iframe>
+                    <span class="flex_column">
+                        <span style="display: inline-block">
+                            <iframe width="730" height="410" title="YouTube video player" frameborder="0" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="1" allow="accelerometer; autoplay; mute; playsinline; loop; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" src="https://www.youtube.com/embed/NOJHHDNAZ34?loop=1&autoplay=1&mute=1&playlist=NOJHHDNAZ34"></iframe>
+                        </span>
+                        <span style="display: inline-block">
+                            As an indie game developer I was <b>one of the co-creators</b> on the hit iOS game "<a href="https://apps.apple.com/us/app/zombie-gunship-gun-down-zombies/id435797419">Zombie Gunship</a>" using a custom engine we wrote in C++. As far as we know, this was the <b><i>first</i> IOS game with post processing</b>. At the time the <b>IPhone 2</b> was the target platform, and the <b>IPhone 3</b> was just out.
+                            I wrote the engine (including the rendering code / shaders), the path finding and various other bits. 
+                        </span>
                     </span>
-                    <span style="width:100%; display:inline-block; padding-bottom: 8px;">
-                    As an indie game developer I was <b>one of the co-creators</b> on the hit iOS game "<a href="https://apps.apple.com/us/app/zombie-gunship-gun-down-zombies/id435797419">Zombie Gunship</a>" using a custom engine we wrote in C++. As far as we know, this was the <b><i>first</i> IOS game with post processing</b>. <br/>At the time the <b>IPhone 2</b> was the target platform, and the <b>IPhone 3</b> was just out.
-                    I wrote the engine (including the rendering code / shaders), the path finding and various other bits. 
-                    </span>                    
                 </p>
             </div>
 
             <div class="line">
                 <p class="line-header">SIDE PROJECTS</p>
-                <p>
+                <p class="line-contents">
                     <span class="subtitle">UI Framework (WIP)</span>
-                    <span style="width:100%; display:inline-block; padding-bottom: 8px;">
-                    <video width="730" controls playsinline autoplay loop muted><source src="gui.mp4" type="video/mp4">Your browser does not support the video tag.</video>
+                    <span class="flex_column">
+                        <span style="display: inline-block"><video width="100%" controls playsinline autoplay loop muted><source src="gui.mp4" type="video/mp4">Your browser does not support the video tag.</video></span>
+                        <span style="display: inline-block">
+                            In my spare time I've been working on an <b>UI framework</b> designed to rapidly make editors and tools. The entire UI is defined using an immediate mode style, and it's rendered using a graphics API such as Vulkan or OpenGL. The idea is to eventually release this as a cross platform library to accelerate tool and editor development.
+                        </span>
                     </span>
-                    <span style="width:100%; display:inline-block; padding-bottom: 8px;">
-                    In my spare time I've been working on an <b>UI framework</b> designed to rapidly make editors and tools. <br/> The entire UI is defined using an immediate mode style, and it's rendered using a graphics API such as Vulkan or OpenGL. The idea is to eventually release this as a cross platform library to accelerate tool and editor development.
-                    </span> 
                 </p>
             </div>
             
             <div class="line">
                 <p class="line-header">&nbsp;</p>
-                <p>
+                <p class="line-contents">
                     <span class="subtitle">Realtime CSG</span>
-                    <span style="width:100%; display:inline-block; padding-bottom: 8px;">
-                    <a href="https://logicalerror.github.io/realtime-csg/"><img src="freedraw2.gif" width="364" style="float:left"/></a>
-                    <a href="https://logicalerror.github.io/realtime-csg/"><img src="curves.gif" width="364" style="float:right"/></a>
-                    </span>
-                    <span style="width:100%; display:inline-block; padding-bottom: 8px;">
-                    <a href="https://logicalerror.github.io/realtime-csg/"><img src="realtimecsg.png" width="364" style="float:right; padding-left: 25px;"/></a>
-                    <span>
-                        <br/>
-                        <br/>
-                        <br/><br/>
-                    I created <a href="https://logicalerror.github.io/realtime-csg/">Realtime-CSG</a>, a <b>level editor</b> plugin for use within Unity. The editing of the level uses a iterative and real-time, Constructive Solid Geometry (CSG), algorithm which I developed independently. It has been used in the development of <a href="https://store.steampowered.com/app/687440/In_The_Valley_of_Gods/">in the valley of the gods</a> (before the team was acquired by Valve), <a href="https://store.steampowered.com/app/1150760/Gloomwood/">Gloomwood</a> and a variety of other indie games.
-                    </span>
-                    </span>
-                    <span style="width:100%; display:inline-block; padding-bottom: 8px;">
-                    <a href="https://logicalerror.github.io/realtime-csg/"><img src="prefabdragging.gif" width="364" style="float:left"/></a>
-                    <a href="https://logicalerror.github.io/realtime-csg/"><img src="dragtexgencopy.gif" width="364" style="float:right"/></a>
-                    </span>
+                    <span class="flex_column">
+                        <span class="flex_rows">
+                            <a href="https://logicalerror.github.io/realtime-csg/"><img src="freedraw2.gif" width="360"/></a>
+                            <a href="https://logicalerror.github.io/realtime-csg/"><img src="curves.gif" width="360"/></a>
+                        </span>
+                        <span class="flex_rows">
+                            <span>
+                                I created <a href="https://logicalerror.github.io/realtime-csg/">Realtime-CSG</a>, a <b>level editor</b> plugin for use within Unity. The editing of the level uses a iterative and real-time, Constructive Solid Geometry (CSG), algorithm which I developed independently. It has been used in the development of <a href="https://store.steampowered.com/app/687440/In_The_Valley_of_Gods/">in the valley of the gods</a> (before the team was acquired by Valve), <a href="https://store.steampowered.com/app/1150760/Gloomwood/">Gloomwood</a> and a variety of other indie games.
+                            </span>
+                            <a href="https://logicalerror.github.io/realtime-csg/"><img src="realtimecsg.png" width="360"/></a>
+                        </span>
+                        <span class="flex_rows">
+                            <a href="https://logicalerror.github.io/realtime-csg/"><img src="prefabdragging.gif" width="360"/></a>
+                            <a href="https://logicalerror.github.io/realtime-csg/"><img src="dragtexgencopy.gif" width="360"/></a>
+                        </span>
+                    </span>                    
                 </p>
             </div>
             
             <div class="line">
                 <p class="line-header">&nbsp;</p>
-                <p>
+                <p class="line-contents">
                     <span class="subtitle">Minecraft clone</span>
-                    <span style="width:100%; display:inline-block; padding-bottom: 8px;">
-                    In 2003 I wrote an experimental <b>minecraft clone</b> in C++. The entire world was rendered in <b>only 2 drawcalls</b> using AZO (<b>approaching zero overdraw</b>) techniques, while using <b>only 1gb of memory using compression</b>. It had an infinite streaming world / far views and had <b>sorted transparency</b> (precalculated sorted geometry inside voxels + runtime sorting whole voxel chunks). It would render in <b>less than 1ms per frame on 2003 hardware</b>.
-                    </span>
-                    <span style="width:100%; display:inline-block; padding-bottom: 8px;">
-                    <iframe width="730" height="410" title="YouTube video player" frameborder="0" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="1" style="float:left;" allow="accelerometer; autoplay; mute; playsinline; loop; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" src="https://www.youtube.com/embed/h5v7FNbBN24?list=PL7mogqtGTzCoDRFTLWnQ9zrMcv6T2feWI&autoplay=1&mute=1&loop=1&playlist=h5v7FNbBN24"></iframe>
+                    <span class="flex_column">
+                        <span class="flex_rows">
+                            <span>
+                            In 2012 I wrote an experimental <b>minecraft clone</b> in C++. The entire world was rendered in <b>only 2 drawcalls</b> using AZO (<b>approaching zero overdraw</b>) techniques, while using <b>only 1gb of memory using compression</b>. It had an infinite streaming world / far views and had <b>sorted transparency</b> (precalculated sorted geometry inside voxels + runtime sorting whole voxel chunks). It would render in <b>less than 1ms per frame on 2012 hardware</b>.
+                            </span>
+                        </span>
+                        <span class="flex_rows">
+                            <span>
+                                <iframe width="730" height="410" title="YouTube video player" frameborder="0" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="1" allow="accelerometer; autoplay; mute; playsinline; loop; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" src="https://www.youtube.com/embed/h5v7FNbBN24?list=PL7mogqtGTzCoDRFTLWnQ9zrMcv6T2feWI&autoplay=1&mute=1&loop=1&playlist=h5v7FNbBN24"></iframe>
+                            </span>
+                        </span>
                     </span>
                 </p>
             </div>
@@ -247,21 +289,39 @@
             
             <div class="line">
                 <p class="line-header">PRESENTATIONS<br/>& ARTICLES</p>
-                <p><a href="https://www.gdcvault.com/play/1026755/Tools-Summit-Geometry-in-Milliseconds"><img src="gdc.png" width="350" style="float:left"/></a></p>
-                <p><br/><br/><br/>At <a href="https://www.gdcvault.com/play/1026755/Tools-Summit-Geometry-in-Milliseconds">GDC 2020</a> I gave a talk on a novel <b>Realtime, iterative, Constructive Solid Geometry</b> algorithm I developed.</p>
+                <p class="line-contents">
+                    <span class="flex_column">
+                        <span class="flex_rows">
+                            <span><a href="https://www.gdcvault.com/play/1026755/Tools-Summit-Geometry-in-Milliseconds"><img src="gdc.png" width="360"/></a></span>
+                            <span>At <a href="https://www.gdcvault.com/play/1026755/Tools-Summit-Geometry-in-Milliseconds">GDC 2020</a> I gave a talk on a novel <b>Realtime, iterative, Constructive Solid Geometry</b> algorithm I developed.</span>
+                        </span>
+                    </span>
+                </p>
             </div>
 
             
             <div class="line">
                 <p class="line-header">&nbsp;</p>
-                <p><br/><br/><br/>At my blog I wrote about a <b>highly optimized, hard to misconfigure</b>, <a href="https://sandervanrossen.blogspot.com/2022/11/implicit-half-edges.html">data structure</a> for storing <b>topology</b> together with ready to render meshes.</p>
-                <p><a href="https://sandervanrossen.blogspot.com/2022/11/implicit-half-edges.html"><img src="implicit_halfedges.png".png" width="350" style="float:left"/></a></p>
+                <p class="line-contents">
+                    <span class="flex_column">
+                        <span class="flex_rows">
+                            <span>At my blog I wrote about a <b>highly optimized, hard to misconfigure</b>, <a href="https://sandervanrossen.blogspot.com/2022/11/implicit-half-edges.html">data structure</a> for storing <b>topology</b> together with ready to render meshes.</span>
+                            <span><a href="https://sandervanrossen.blogspot.com/2022/11/implicit-half-edges.html"><img src="implicit_halfedges.png" width="360"/></a></span>
+                        </span>
+                    </span>
+                </p>
             </div>
             
             <div class="line">
                 <p class="line-header">&nbsp;</p>
-                <p><a href="https://www.taylorfrancis.com/books/edit/10.1201/b10946/game-development-tools-marwan-ansari"><img src="gdt.png" width="350" style="float:left"/></a></p>
-                <p><br/><br/><br/><br/><br/><br/>In the book "<a href="https://www.taylorfrancis.com/books/edit/10.1201/b10946/game-development-tools-marwan-ansari">Game Development Tools</a>" I wrote an article about "<b>Realtime Constructive Solid Geometry</b>". Which is an older algorithm than I gave a GDC talk about.</p>
+                <p class="line-contents">
+                    <span class="flex_column">
+                        <span class="flex_rows">
+                            <span><a href="https://www.taylorfrancis.com/books/edit/10.1201/b10946/game-development-tools-marwan-ansari"><img src="gdt.png" width="360"/></a></span>
+                            <span>In the book "<a href="https://www.taylorfrancis.com/books/edit/10.1201/b10946/game-development-tools-marwan-ansari">Game Development Tools</a>" I wrote an article about "<b>Realtime Constructive Solid Geometry</b>". Which is an older algorithm than I gave a GDC talk about.</span>
+                        </span>
+                    </span>
+                </p>
             </div>
 
 
